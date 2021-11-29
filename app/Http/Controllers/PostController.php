@@ -14,7 +14,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::all();
+        return view('user.index',
+            compact('posts'));
     }
 
     /**
@@ -22,16 +24,18 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): \Illuminate\Http\Response
     {
-        return view('user.create');
+        $posts = Post::all();
+        return view('user.create',
+            compact('posts'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
@@ -39,14 +43,15 @@ class PostController extends Controller
             'title' => 'required',
             'content' => 'required'
         ]);
-        $student = new Post([
+        $post = new Post([
             'title' => $request->get('title'),
             'content' => $request->get('content')
         ]);
-        $student->save();
+        $post->save();
         return redirect()
             ->route('user.create')
             ->with('success', 'Data added!');
+
     }
 
     /**
