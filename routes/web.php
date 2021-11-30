@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\PostController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,23 +14,27 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/index', [PostController::class, 'index'])
+    ->name('posts');
+
+Route::resource('post', 'PostController');
 
 Route::get('/', function () {
-    return view('user.index');
+    return view('welcome');
 });
+
+Route::get('/settings', function () {
+    return view('user.settings');
+})->name('settings');
 
 Route::get('/create', function () {
     return view('user.create');
-})->name('user.create');
-
-Route::get('/index', function () {
-    return view('user.index');
-})->name('user.index');
+})->name('user.create')->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::resource('post', 'PostController');
+
 
 require __DIR__.'/auth.php';
