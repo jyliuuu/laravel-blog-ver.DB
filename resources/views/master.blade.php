@@ -24,6 +24,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
 {{--@include('layouts.navigation')--}}
+@include('layouts.navigation')
 <div class="container">
     @yield('content')
 </div>
