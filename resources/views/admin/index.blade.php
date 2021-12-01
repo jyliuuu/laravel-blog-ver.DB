@@ -1,7 +1,6 @@
 @extends('master')
 
 @section('content')
-
     <div class="fs-s"></div>
     <body>
         <h1>Welcome back, admin.</h1>

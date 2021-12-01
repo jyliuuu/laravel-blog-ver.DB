@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,15 +16,19 @@ use App\Http\Controllers\PostController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/index', [PostController::class, 'index'])
-    ->name('admin.index')->middleware('auth');
-
 //Route::get('/index', function() {
 //    return view('user.index');
 //})->name('posts');
 
+Route::get('/index', [PostController::class, 'index'])
+    ->name('admin.index')->middleware('auth');
+
 Route::resource('post', 'PostController');
+
+Route::get('/users', [UserController::class, 'index'])
+    ->name('admin.users')->middleware('auth');
+
+Route::resource('user', 'UserController');
 
 Route::get('/', function () {
     return view('welcome');

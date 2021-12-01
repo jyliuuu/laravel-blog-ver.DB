@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-12">
             <h1 class="header">Edit post.</h1>
-            <p>You're here to edt a post, go ahead, change the format.</p>
+            <p>You're here to edit a post, go ahead, change the format.</p>
             @if(count($errors) > 0)
                 <div class="alert alert-danger">
                     <ul>
