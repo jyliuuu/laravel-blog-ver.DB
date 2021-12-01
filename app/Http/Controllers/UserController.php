@@ -74,13 +74,14 @@ class UserController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'mail' => 'required'
+            'mail' => 'required',
         ]);
 
 
         $user = User::find($id);
         $user->name = $request->get('name');
         $user->email = $request->get('mail');
+        $user->role_id = $request->get('role');
         $user->save();
 
         return redirect()->route('admin.users')
@@ -95,6 +96,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->route('admin.users')->with('success', 'User Deleted.');
     }
 }

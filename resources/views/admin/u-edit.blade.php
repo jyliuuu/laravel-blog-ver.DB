@@ -30,6 +30,14 @@
                     <input type="text" class="form-control" name="mail"
                            value="{{ $users->email}}" placeholder="Enter new mail here.">
                 </div>
+                <div class="form-group">
+                    <label for="role">Roles</label>
+                    <select class="form-control" id="exampleFormControlSelect1"
+                            name="role" id="role">
+                        <option value="1">Admin</option>
+                        <option selected value="2">User</option>
+                    </select>
+                </div>
 {{--                <div class="form-group">--}}
 {{--                    <label for="role">Role</label>--}}
 {{--                    <input type="text" class="form-control" name="role"--}}

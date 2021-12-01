@@ -30,11 +30,16 @@
                 <td>{{ $user['name'] }}</td>
                 <td>{{ $user['email'] }}</td>
                 <td>{{ $user['created_at'] }}</td>
-                <td></td>
+                <td>@if($user['role_id'] == 1)
+                        admin
+                    @else
+                        user
+                    @endif
+                </td>
                 <td><a href="{{ action('UserController@edit',
                         $user['id']) }}" class="btn btn-warning">Edit</a></td>
                 <td>
-                    <form method="post" action="{{ action('PostController@destroy',
+                    <form method="post" action="{{ action('UserController@destroy',
                         $user['id']) }}">
                         {{ csrf_field() }}
                         <input type="hidden" name="_method" value="Delete"/>
