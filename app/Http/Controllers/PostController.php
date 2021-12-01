@@ -15,7 +15,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
-        return view('user.index',
+        return view('admin.index',
             compact('posts'));
     }
 
@@ -27,7 +27,7 @@ class PostController extends Controller
     public function create(): \Illuminate\Http\Response
     {
         $posts = Post::all();
-        return view('user.create',
+        return view('admin.create',
             compact('posts'));
     }
 
@@ -49,7 +49,7 @@ class PostController extends Controller
         ]);
         $post->save();
         return redirect()
-            ->route('user.create')
+            ->route('admin.create')
             ->with('success', 'Data added!');
 
     }
@@ -73,7 +73,9 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::find($id);
+        return view('admin.edit',
+            compact('post', 'id'));
     }
 
     /**
@@ -85,7 +87,19 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'content' => 'required'
+        ]);
+
+
+        $post = Post::find($id);
+        $post->title = $request->get('title');
+        $post->content = $request->get('content');
+        $post->save();
+
+        return redirect()->route('admin.index')
+            ->with('success', 'Post has successfully been updated.');
     }
 
     /**
@@ -96,6 +110,8 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::find($id);
+        $post->delete();
+        return redirect()->route('admin.index')->with('success', 'Post Deleted.');
     }
 }

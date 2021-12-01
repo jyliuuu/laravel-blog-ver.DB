@@ -14,8 +14,13 @@ use App\Http\Controllers\PostController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/index', [PostController::class, 'index'])
-    ->name('posts');
+    ->name('admin.index')->middleware('auth');
+
+//Route::get('/index', function() {
+//    return view('user.index');
+//})->name('posts');
 
 Route::resource('post', 'PostController');
 
@@ -28,13 +33,11 @@ Route::get('/settings', function () {
 })->name('settings');
 
 Route::get('/create', function () {
-    return view('user.create');
-})->name('user.create')->middleware('auth');
+    return view('admin.create');
+})->name('admin.create')->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
-
-
 
 require __DIR__.'/auth.php';
