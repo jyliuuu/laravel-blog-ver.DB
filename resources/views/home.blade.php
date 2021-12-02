@@ -42,9 +42,9 @@
                 </h1>
             </div>
             <h4 style="color: white">
-                The one and only platform you'll need for your Laravel journey.
+                The one and only platform you'll ever need for your Laravel journey.
                 <br>
-                <span style="color: red">LaraBlog</span> offers you to be able to connect to millions of others, doing the same thing:
+                <span style="color: red">LaraBlog</span> offers you to be able to connect with millions of others, doing the same thing:
             </h4>
             <h1 class="header-laravel hover-change">Studying Laravel.</h1>
             <div class="fs-xs"></div>
