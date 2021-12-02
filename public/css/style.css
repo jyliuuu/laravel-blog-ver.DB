@@ -27,6 +27,12 @@
     width: 35%;
 }
 
+.navbar-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 150%;
+    color: red;
+}
+
 .header-laravel {
     text-align: left;
     justify-content: center;
@@ -74,7 +80,7 @@
 }
 
 .hover-change {
-    color: black;
+    color: #232323;
     -webkit-transition: color 1s;
     transition: color 1s;
 }
@@ -124,9 +130,9 @@
 /* Setting fade transition and default settings */
 .main {
     background-image: linear-gradient(180deg,
-    whitesmoke 20%,
-    grey 60%,
-    grey 100%
+    whitesmoke 10%,
+    black 35%,
+    black 100%
     );
 }
 
