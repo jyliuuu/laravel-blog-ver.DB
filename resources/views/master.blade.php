@@ -9,26 +9,30 @@
     <!-- Fonts -->
 
     <!-- Styles -->
-    <style>
-
-    </style>
+    <link rel="stylesheet" href="{{ URL::to('css/text-animations.css') }}">
+    <link rel="stylesheet" href="{{ URL::to('css/shapes.css') }}">
     <link rel="stylesheet" href="{{ URL::to('css/app.css') }}">
     <link rel="stylesheet" href="{{ URL::to('css/style.css') }}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/jquery.scrollie.min.js"></script>
+
 <body class="antialiased">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
 {{--@include('layouts.navigation')--}}
 @include('layouts.navigation')
-<div class="container">
-    @yield('content')
+<div class="main">
+    <div class="container">
+        @yield('content')
+    </div>
 </div>
+
 </body>
 </html>

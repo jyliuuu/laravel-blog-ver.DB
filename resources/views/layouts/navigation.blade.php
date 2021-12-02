@@ -1,3 +1,6 @@
+<?php
+$role = Auth::user()->role_id;
+?>
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -11,22 +14,28 @@
                 </div>
 
                 <!-- Navigation Links -->
-{{--                @if($user['role_id'] == 1)--}}
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('admin.index')" :active="request()->routeIs('admin.index')">
+                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                        {{ __('Home') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('user.blogs')" :active="request()->routeIs('user.blogs')">
                         {{ __('Posts') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('admin.users')" :active="request()->routeIs('admin.users')">
-                        {{ __('Users') }}
+                @if($role == 1)
+                    <x-nav-link :href="route('admin.index')" :active="request()->routeIs('admin.index')">
+                        {{ __('Posts+') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('admin.users')" :active="request()->routeIs('admin.users')">
+                        {{ __('Users+') }}
+                    </x-nav-link>
+                @endif
                     <x-nav-link :href="route('settings')" :active="request()->routeIs('settings')">
                         {{ __('Settings') }}
                     </x-nav-link>
                 </div>
-{{--                @endif--}}
             </div>
 
             <!-- Settings Dropdown -->
@@ -49,7 +58,6 @@
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">

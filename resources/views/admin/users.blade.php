@@ -39,12 +39,16 @@
                 <td><a href="{{ action('UserController@edit',
                         $user['id']) }}" class="btn btn-warning">Edit</a></td>
                 <td>
+                    @if(Session::get('user_email') != $user['email'])
                     <form method="post" action="{{ action('UserController@destroy',
                         $user['id']) }}">
                         {{ csrf_field() }}
                         <input type="hidden" name="_method" value="Delete"/>
                         <button type="submit" class="btn btn-danger"/>Delete</form>
                     </form>
+                    @else
+                        <p class="text-success" style="margin-top: 7px; margin-left: 12px"><strong>In use</strong></p>
+                    @endif
                 </td>
             </tr>
         @endforeach

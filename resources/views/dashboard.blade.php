@@ -1,3 +1,11 @@
+<?php
+
+use Illuminate\Support\Facades\Auth;
+
+$email = Auth::user()->email;
+$id = Auth::user()->id;
+$role = Auth::user()->role_id;
+?>
 <x-app-layout>
     <body class="component">
         <x-slot name="header">
@@ -6,6 +14,7 @@
             </h2>
         </x-slot>
 
+        {{ Session::put('user_email', $email) }}
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">

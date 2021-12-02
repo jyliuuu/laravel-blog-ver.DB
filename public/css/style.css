@@ -1,5 +1,134 @@
+*{scroll-behavior:smooth}
+
+.fs-xs {
+    min-height: 20px;
+}
+
 .fs-s {
     min-height: 50px;
 }
+
+.fs-m {
+    min-height: 100px;
+}
+
+.fs-l {
+    min-height: 400px;
+}
+
+.fs-xl {
+    min-height: 1000px;
+}
+
+.img-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+}
+
+.header-laravel {
+    text-align: left;
+    justify-content: center;
+    font-size: 1500%;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -15px;
+    line-height: 250px;
+}
+
+.header-register {
+    text-align: right;
+    font-size: 1500%;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -15px;
+    line-height: 250px;
+}
+
+.header-l {
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -2px;
+}
+
+.header-r {
+    text-align: right;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -2px;
+}
+
+.header-center {
+    text-align: left;
+    justify-content: center;
+    font-size: 600%;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -6px;
+    line-height: 100px;
+}
+
+.header-active {
+    -webkit-transition: color .5s;
+    transition: color .5s;
+}
+.header-active:hover {
+    color: red;
+}
+
+.hover-change {
+    color: black;
+    -webkit-transition: color 1s;
+    transition: color 1s;
+}
+.hover-change:hover {
+    color: red;
+}
+
+.styled-font {
+    text-align: left;
+    letter-spacing: -1.5px;
+    line-height: 100px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: red;
+}
+
+.hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 10px;
+    bottom: 0;
+    left: 0;
+    background-color: red;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.text-center {
+    text-align: center;
+    justify-content: center;
+}
+
+.body-l {
+    min-height: 2500px;
+}
+/* Setting fade transition and default settings */
+.main {
+    background-image: linear-gradient(180deg,
+    whitesmoke 20%,
+    grey 60%,
+    grey 100%
+    );
+}
+
 
 

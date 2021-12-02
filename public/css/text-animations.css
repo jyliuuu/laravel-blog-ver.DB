@@ -1,0 +1,49 @@
+/* text animations*/
+.fade-in {
+    animation-name: FadeIn;
+    animation-duration: 1.5s;
+    transition-timing-function: linear;
+    animation-delay: .2s;
+    animation-fill-mode : backwards , none;
+    animation-iteration-count : 1 , infinite;
+}
+
+.fade-in-delay {
+     animation-name: FadeIn;
+     animation-duration: 1.5s;
+     transition-timing-function: linear;
+     animation-delay: .4s;
+     animation-fill-mode : backwards , none;
+     animation-iteration-count : 1 , infinite;
+}
+.fade-in-delay-m {
+    animation-name: FadeIn;
+    animation-duration: 1.5s;
+    transition-timing-function: linear;
+    animation-delay: .8s;
+    animation-fill-mode : backwards , none;
+    animation-iteration-count : 1 , infinite;
+}
+
+.fade-in-sped {
+    animation-name: FadeIn;
+    animation-duration: 1.5s;
+    transition-timing-function: linear;
+}
+@keyframes FadeIn {
+    0% {
+        transform: translateY(20%);
+        opacity: 0;
+    }
+    60% {
+        opacity:0;
+        transform: translateY(10%);
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+
+
