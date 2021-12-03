@@ -32,8 +32,6 @@
 @else
     @include('layouts.guest-navigation')
 @endif
-<div class="body-l">
-        @yield('content')
-</div>
+    @yield('content')
 </body>
 </html>

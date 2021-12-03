@@ -1,7 +1,8 @@
 @extends('master')
 
 @section('content')
-    <div class="fs-s"></div>
+<div class="fs-s"></div>
+<div class="container">
     <div class="row">
         <div class="col-md-12">
             <h1 class="header">Edit post.</h1>
@@ -38,14 +39,16 @@
                         <option selected value="2">User</option>
                     </select>
                 </div>
-{{--                <div class="form-group">--}}
-{{--                    <label for="role">Role</label>--}}
-{{--                    <input type="text" class="form-control" name="role"--}}
-{{--                           value="{{ $user->role}}" placeholder="Enter content here.">--}}
-{{--                </div>--}}
+    {{--                <div class="form-group">--}}
+    {{--                    <label for="role">Role</label>--}}
+    {{--                    <input type="text" class="form-control" name="role"--}}
+    {{--                           value="{{ $user->role}}" placeholder="Enter content here.">--}}
+    {{--                </div>--}}
 
                 <input type="submit" class="btn btn-warning" value="Edit"/>
             </form>
+            </div>
         </div>
     </div>
+</div>
 @endsection

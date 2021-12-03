@@ -3,8 +3,8 @@
 use App\Http\Controllers\ViewPostController;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PostController;
 
 
 /*
@@ -27,29 +27,39 @@ Route::get('/home', function () {
 })->name('home');
 
 // index admin edit post
-Route::get('/index', [PostController::class, 'index'])
-    ->name('admin.index')->middleware('auth');
-Route::resource('post', 'PostController');
+Route::get('/admin.posts', [PostController::class, 'index'])
+    ->name('admin.posts')->middleware('auth');
 
-// index user view posts
-Route::get('/posts', [ViewPostController::class, 'index'])
-    ->name('user.blogs');
-Route::resource('post', 'ViewPostController');
+Route::get('/admin.destroy', [PostController::class, 'destroy'])
+    ->name('admin.destroy')->middleware('auth');
+
+Route::resource('admin.posts', 'PostController');
 
 // index admin edit users
 Route::get('/users', [UserController::class, 'index'])
     ->name('admin.users')->middleware('auth');
 Route::resource('user', 'UserController');
 
+// index user view posts
+Route::get('/posts', [ViewPostController::class, 'index'])
+    ->name('user.posts');
+Route::resource('post', 'ViewPostController');
+
+
+
 // laravel splash screen
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 // settings for users
 Route::get('/settings', function () {
     return view('user.settings');
 })->name('settings');
+
+Route::get('/about', function () {
+    return view('other.about');
+})->name('about');
 
 // admin create new blog
 Route::get('/create', function () {
@@ -58,7 +68,7 @@ Route::get('/create', function () {
 
 // dashboard redirects
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('greeting');
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

@@ -15,7 +15,7 @@ class ViewPostController extends Controller
     public function index()
     {
         $posts = Post::all();
-        return view('user.index',
+        return view('user.posts',
             compact('posts'));
     }
 

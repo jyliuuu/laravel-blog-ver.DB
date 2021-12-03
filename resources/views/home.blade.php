@@ -14,7 +14,7 @@
             </div>
             <div class="fade-in-delay">
                 <h1 class="header-center" style="margin-top: -25px">
-                    <a href="{{route('user.blogs')}}" style="text-decoration: none; color: black !important;"
+                    <a href="{{route('user.posts')}}" style="text-decoration: none; color: black !important;"
                        class="hover-underline-animation">
                         let's interact w/ others
                         <a href="https://laravel.com/docs/8.x" style="text-decoration: none; color: black !important;"
@@ -27,7 +27,7 @@
             <br>
             <div class="fade-in-delay-m">
                 <h1 class="header-center" style="margin-top: -25px; font-size: 450%">
-                    <a href="#register" style="text-decoration: none; color: black !important;"
+                    <a href="#one" style="text-decoration: none; color: black !important;"
                        class="hover-underline-animation">
                         Let's go!
                     </a>
@@ -37,9 +37,11 @@
         <div class="fs-l"></div>
         <div class="styled-font">
             <div class="fade-in-sped">
+                <section class="one" id="one">
                 <h1 class="text-white" style="font-size: 400%; letter-spacing: -3px;">
                     One & only.
                 </h1>
+                </section>
             </div>
             <h4 style="color: white">
                 The one and only platform you'll ever need for your Laravel journey.

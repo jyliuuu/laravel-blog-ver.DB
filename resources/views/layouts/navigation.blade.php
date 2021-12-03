@@ -21,11 +21,11 @@ $role = Auth::user()->role_id;
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('user.blogs')" :active="request()->routeIs('user.blogs')">
+                    <x-nav-link :href="route('user.posts')" :active="request()->routeIs('user.posts')">
                         {{ __('Posts') }}
                     </x-nav-link>
                 @if($role == 1)
-                    <x-nav-link :href="route('admin.index')" :active="request()->routeIs('admin.index')">
+                    <x-nav-link :href="route('admin.posts')" :active="request()->routeIs('admin.posts')">
                         {{ __('Posts+') }}
                     </x-nav-link>
                     <x-nav-link :href="route('admin.users')" :active="request()->routeIs('admin.users')">
@@ -43,14 +43,16 @@ $role = Auth::user()->role_id;
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-                            <div>{{ Auth::user()->name }}</div>
                             @if (Request::path() == 'dashboard')
-                            <div class="ml-1">
-                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                </svg>
-                            </div>
                             @endif
+                            <div>{{ Auth::user()->name }} | &ensp;</div>
+                                <div class="fs-xs"></div>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <div class="styled-font">
+                                    <input class="btn-sm" type="submit" value="Logout">
+                                </div>
+                            </form>
                         </button>
                     </x-slot>
 
@@ -85,9 +87,6 @@ $role = Auth::user()->role_id;
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('admin.index')" :active="request()->routeIs('admin.index')">
-                {{ __('admin.index') }}
             </x-responsive-nav-link>
         </div>
 

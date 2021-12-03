@@ -1,7 +1,8 @@
 @extends('master')
 
 @section('content')
-    <div class="fs-s"></div>
+<div class="fs-s"></div>
+<div class="container">
     <div class="row">
         <div class="col-md-12">
             <h1 class="header">Edit post.</h1>
@@ -18,7 +19,7 @@
 
             <form action="{{ action('PostController@update', $id) }}" method="POST">
                 {{ csrf_field() }}
-{{--                laravel patch method    --}}
+                {{--                laravel patch method    --}}
                 <input type="hidden" name="_method" value="PATCH"/>
                 <div class="form-group">
                     <label for="title">Title</label>
@@ -35,4 +36,5 @@
             </form>
         </div>
     </div>
+</div>
 @endsection
