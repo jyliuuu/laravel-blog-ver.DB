@@ -38,7 +38,6 @@
                             <div class="fs-s"></div>
                         </div>
                     </div>
-                </section>
                 <section class="register" id="register">
                     <div class="styled-font">
                         <a href="{{ route('settings') }}" class="header-register hover-change-red"><u>config.php</u></a>
@@ -48,7 +47,6 @@
                         </h4>
                         <div class="fs-s"></div>
                     </div>
-                </section>
                 <div class="fs-m"></div>
                 <section class="about" id="about">
                     <div class="styled-font">
