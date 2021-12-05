@@ -28,7 +28,7 @@ class PostController extends Controller
     public function create(): Response
     {
         $posts = Post::all();
-        return view('admin.create',
+        return route('admin.create',
             compact('posts'));
     }
 
@@ -72,11 +72,10 @@ class PostController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function edit($id): Response
+    public function edit($id)
     {
-        $post = Post::find($id);
-        return view('admin.edit',
-            compact('post', 'id'));
+        $posts = Post::find($id);
+        return view('admin.edit', compact('posts', 'id'));
     }
 
     /**
@@ -93,13 +92,12 @@ class PostController extends Controller
             'content' => 'required'
         ]);
 
-
         $post = Post::find($id);
         $post->title = $request->get('title');
         $post->content = $request->get('content');
         $post->save();
 
-        return redirect()->route('admin.index')
+        return redirect()->route('a.posts')
             ->with('success', 'Post has successfully been updated.');
     }
 
@@ -109,10 +107,11 @@ class PostController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function destroy($id): Response
+    public function destroy($id)
     {
         $post = Post::find($id);
         $post->delete();
-        return redirect()->route('admin.index')->with('success', 'Post Deleted.');
+        return redirect()->route('a.posts')
+        ->with('success', 'Post Deleted.');
     }
 }

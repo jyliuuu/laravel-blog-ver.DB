@@ -25,7 +25,7 @@ $role = Auth::user()->role_id;
                         {{ __('Posts') }}
                     </x-nav-link>
                 @if($role == 1)
-                    <x-nav-link :href="route('admin.posts')" :active="request()->routeIs('admin.posts')">
+                    <x-nav-link :href="route('a.posts')" :active="request()->routeIs('a.posts')">
                         {{ __('Posts+') }}
                     </x-nav-link>
                     <x-nav-link :href="route('admin.users')" :active="request()->routeIs('admin.users')">

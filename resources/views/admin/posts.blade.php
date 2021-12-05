@@ -28,10 +28,12 @@
                     <td>{{ $single_post['title'] }}</td>
                     <td>{{ $single_post['content'] }}</td>
                     <td>{{ $single_post['created_at'] }}</td>
-                    <td><a href="{{ route('admin.posts', $single_post['id']) }}"
+                    <td><a href="{{ action('PostController@edit',
+                        $single_post['id']) }}"
                            class="btn btn-warning">Edit</a></td>
                     <td>
-                        <form method="post" action="{{ route('admin.destroy', $single_post['id']) }}">
+                        <form method="post" action="{{ action('PostController@destroy',
+                        $single_post['id']) }}">
                             {{ csrf_field() }}
                             <input type="hidden" name="_method" value="Delete"/>
                             <button type="submit" class="btn btn-danger"/>Delete</form>

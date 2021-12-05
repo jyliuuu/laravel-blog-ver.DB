@@ -24,12 +24,12 @@
                 <div class="form-group">
                     <label for="title">Title</label>
                     <input type="text" class="form-control" name="title"
-                           value="{{ $post->title}}" placeholder="Enter post title.">
+                        value="{{ $posts->title}}" placeholder="Enter post title.">
                 </div>
                 <div class="form-group">
                     <label for="content">Content</label>
                     <input type="text" class="form-control" name="content"
-                           value="{{ $post->content}}" placeholder="Enter content here.">
+                        value="{{ $posts->content}}" placeholder="Enter content here.">
                 </div>
 
                 <input type="submit" class="btn btn-warning" value="Edit"/>

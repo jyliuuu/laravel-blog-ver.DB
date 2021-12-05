@@ -24,7 +24,7 @@
                 <div class="form-group">
                     <label for="name">User Name</label>
                     <input type="text" class="form-control" name="name"
-                           value="{{ $users->name}}" placeholder="Enter user name.">
+                           value="{{ $users->name}}" placeholder="Enter user's name.">
                 </div>
                 <div class="form-group">
                     <label for="mail">User email</label>
@@ -34,10 +34,12 @@
                 <div class="form-group">
                     <label for="role">Roles</label>
                     <select class="form-control" id="exampleFormControlSelect1"
-                            name="role" id="role">
+                            name="role" id="role" required>
+                        <option disabled="true" selected value> // select an option // </option>
                         <option value="1">Admin</option>
-                        <option selected value="2">User</option>
+                        <option value="2">User</option>
                     </select>
+                    <p class="text-muted">It is <strong>not</strong> recommended to change your own role, during login.</p>
                 </div>
     {{--                <div class="form-group">--}}
     {{--                    <label for="role">Role</label>--}}

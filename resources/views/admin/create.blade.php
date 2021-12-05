@@ -22,7 +22,7 @@
 
                     <h1 class="header">New Post.</h1>
                     <p>You're here to create a new post, go ahead, change the world.</p>
-                    <form action="{{ url('post') }}" method="post">
+                        <form action="{{ url('insert') }}" method="post">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label for="title">Title</label>

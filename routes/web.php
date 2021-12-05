@@ -26,16 +26,29 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 
-// index admin edit post
-Route::get('/admin.posts', [PostController::class, 'index'])
-    ->name('admin.posts')->middleware('auth');
+// admin create new blog form
+Route::get('/create', function () {
+    return view('admin.create');
+})->name('admin.create')->middleware('auth');
 
-Route::get('/admin.destroy', [PostController::class, 'destroy'])
-    ->name('admin.destroy')->middleware('auth');
+// admin insert new blog
+Route::resource('insert', 'PostController');
 
-Route::resource('admin.posts', 'PostController');
+// index admin see all posts
+Route::get('/a.posts', [PostController::class, 'index'])
+    ->name('a.posts')->middleware('auth');
 
-// index admin edit users
+// admin delete post
+Route::get('/a.destroy', [PostController::class, 'destroy'])
+    ->name('a.destroy')->middleware('auth');
+
+// admin edit single post form
+Route::get('/a.post',  function () {
+    return view('admin.edit');
+})->name('a.post');
+Route::resource('posts', 'PostController');
+
+// index admin view users
 Route::get('/users', [UserController::class, 'index'])
     ->name('admin.users')->middleware('auth');
 Route::resource('user', 'UserController');
@@ -60,11 +73,6 @@ Route::get('/settings', function () {
 Route::get('/about', function () {
     return view('other.about');
 })->name('about');
-
-// admin create new blog
-Route::get('/create', function () {
-    return view('admin.create');
-})->name('admin.create')->middleware('auth');
 
 // dashboard redirects
 Route::get('/dashboard', function () {

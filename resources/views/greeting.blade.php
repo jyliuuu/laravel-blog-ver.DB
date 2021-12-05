@@ -1,3 +1,12 @@
+<?php
+
+use Illuminate\Support\Facades\Auth;
+
+$email = Auth::user()->email;
+$id = Auth::user()->id;
+$role = Auth::user()->role_id;
+?>
+{{ Session::put('user_email', $email) }}
 @extends('master')
 
 @section('content')
@@ -30,7 +39,7 @@
                 <section class="new" id="new">
                     <div class="fade-in-delay-m">
                         <div class="styled-font">
-                            <a href="{{ route('admin.posts') }}" class="header-register hover-change-red"><u>$newPost</u></a>
+                            <a href="{{ route('a.posts') }}" class="header-register hover-change-red"><u>$newPost</u></a>
                             <div class="fs-xs"></div>
                             <h4 style="color: black">
                                 Let the world hear your voice, or your problems with Laravel..
