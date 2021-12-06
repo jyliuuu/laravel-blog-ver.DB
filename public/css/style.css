@@ -89,31 +89,45 @@
     line-height: 100px;
 }
 
+.header-center-s {
+    text-align: left;
+    justify-content: center;
+    font-size: 400%;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -4px;
+    color: black;
+}
+
 .header-active {
     -webkit-transition: color .5s;
     transition: color .5s;
 }
 .header-active:hover {
     color: red;
+    cursor: none;
 }
 
 .hover-change {
     color: #232323;
     -webkit-transition: color 1s;
     transition: color 1s;
+    cursor: none;
 }
 .hover-change:hover {
     color: red;
+    cursor: none;
 }
 
 .hover-change-red {
     color: darkred;
     -webkit-transition: color 1s;
     transition: color 1s;
+    cursor: none;
 }
 
 .hover-change-red:hover {
     color: black;
+    cursor: none;
 }
 
 .styled-font {
@@ -124,12 +138,14 @@
 }
 
 .hover-underline-animation {
+    cursor: none;
     display: inline-block;
     position: relative;
     color: red;
 }
 
 .hover-underline-animation:after {
+    cursor: none;
     content: '';
     position: absolute;
     width: 100%;
@@ -140,11 +156,14 @@
     background-color: red;
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
+
 }
 
 .hover-underline-animation:hover:after {
+    cursor: none;
     transform: scaleX(1);
     transform-origin: bottom left;
+
 }
 
 .text-center {

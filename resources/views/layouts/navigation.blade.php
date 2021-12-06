@@ -50,9 +50,10 @@ $role = Auth::user()->role_id;
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
                                 <div class="styled-font">
-                                    <input class="btn-sm" type="submit" value="Logout">
+                                    <input class="btn-sm" type="submit"  value="Logout">
                                 </div>
                             </form>
+
                         </button>
                     </x-slot>
 

@@ -23,7 +23,7 @@
                 <th scope="col">Creation date</th>
                 <th scope="col">Role</th>
                 <th scope="col">Edit</th>
-                <th scope="col">Delete</th>
+                <th scope="col">Ban</th>
             </tr>
             @foreach($users as $user)
                 <tr>
@@ -45,7 +45,7 @@
                             $user['id']) }}">
                                 {{ csrf_field() }}
                                 <input type="hidden" name="_method" value="Delete"/>
-                                <button type="submit" class="btn btn-danger"/>Delete</form>
+                                <button type="submit" class="btn btn-danger"/>Ban</form>
                             </form>
                         @else
                             <p class="text-success" style="margin-top: 7px; margin-left: 12px"><strong>In use</strong></p>

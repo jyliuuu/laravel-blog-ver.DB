@@ -39,7 +39,7 @@
                         <option value="1">Admin</option>
                         <option value="2">User</option>
                     </select>
-                    <p class="text-muted">It is <strong>not</strong> recommended to change your own role, during login.</p>
+                    <p class="text-muted">It is <strong>not</strong> recommended to demote your own role, during login.</p>
                 </div>
     {{--                <div class="form-group">--}}
     {{--                    <label for="role">Role</label>--}}

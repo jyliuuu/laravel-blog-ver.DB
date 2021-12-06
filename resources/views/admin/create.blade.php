@@ -26,8 +26,9 @@
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label for="title">Title</label>
-                            <input type="text" class="form-control" id="title" name="title" placeholder="Enter your title here.">
+                            <input type="text" maxlength="30" class="form-control" id="title" name="title" placeholder="Enter your title here.">
                         </div>
+                            <p class="text-muted">The 'title' textbox has a max letter value of '30'.</p>
                         <div class="form-group">
                             <label for="content">Content</label>
                             <input type="text" class="form-control" id="content" name="content" placeholder="Enter your content here.">

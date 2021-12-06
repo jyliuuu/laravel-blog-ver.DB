@@ -58,8 +58,6 @@ Route::get('/posts', [ViewPostController::class, 'index'])
     ->name('user.posts');
 Route::resource('post', 'ViewPostController');
 
-
-
 // laravel splash screen
 Route::get('/', function () {
     return view('home');

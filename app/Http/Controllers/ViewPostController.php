@@ -48,7 +48,8 @@ class ViewPostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::find($id);
+        return view('user.view-post', compact('post', 'id'));
     }
 
     /**

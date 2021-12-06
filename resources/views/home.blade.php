@@ -9,8 +9,11 @@
                 <h2 class="header-l">LaraBlogs</h2>
             </div>
             <div class="fade-in">
-                <h1 class="header-center" style="color: black; margin-top: -12px">
-                    Welcome to <p header-center class="hover-underline-animation">LaraBlogs</p></h1>
+                <div class="morph">
+                    <h1 class="header-center" style="color: black; margin-top: -12px">
+                    Welcome to <p header-center id="morph" class="hover-underline-animation"
+                    >LaraBlogs</p></h1>
+                </div>
             </div>
             <div class="fade-in-delay">
                 <h1 class="header-center" style="margin-top: -25px">

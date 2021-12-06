@@ -10,7 +10,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ URL::to('css/text-animations.css') }}">
-    <link rel="stylesheet" href="{{ URL::to('css/shapes.css') }}">
+    <link rel="stylesheet" href="{{ URL::to('css/cursor.css') }}">
     <link rel="stylesheet" href="{{ URL::to('css/app.css') }}">
     <link rel="stylesheet" href="{{ URL::to('css/style.css') }}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -27,11 +27,32 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
 {{--@include('layouts.navigation')--}}
-@if (Auth::check())
-    @include('layouts.navigation')
-@else
-    @include('layouts.guest-navigation')
-@endif
+<div class="no-cursor">
+    @if (Auth::check())
+        @include('layouts.navigation')
+    @else
+        @include('layouts.guest-navigation')
+    @endif
     @yield('content')
+</div>
+
 </body>
 </html>
+<div class="cursor">
+{{--first div defies text on cursor--}}
+    <div>
+        <span></span>
+    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+<script src="{{ URL::to('js/cursor.js') }}"></script>

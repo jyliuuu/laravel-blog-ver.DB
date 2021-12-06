@@ -1,0 +1,38 @@
+:root {
+    --primaryColor: red;
+}
+div.cursor div {
+    position: absolute;
+    top: 300px;
+    left: 300px;
+    width: 32px;
+    height: 32px;
+    background-color: var(--primaryColor);
+    border-radius: 50%;
+    z-index: 10000;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+}
+
+.morph:hover {
+    --primaryColor: grey;
+}
+
+.no-cursor {
+    cursor: none;
+}
+
+div.cursor div span {
+    position: absolute;
+    top: 0;
+    left: 40px;
+    width: 300px;
+    font-size: 25px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -1px;
+    color: red;
+    line-height: 20px;
+}
+
+

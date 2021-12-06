@@ -6,27 +6,22 @@
             <div class="fs-s"></div>
                 <div class="styled-font">
                     <div class="fade-in-sped">
-                        <a style="text-decoration: none; color: black !important;"
-                           href="{{ action('PostController@view',
-                            $post['id']) }}">
-                            <h1 class="header-post hover-change">
-                                {{ $post['title'] }}
-                            </h1>
-                        </a>
+                        <h1 class="header-post" style="color: red; word-break: break-word;">
+                            {{ $post['title'] }}
+                        </h1>
                     </div>
                     <div class="fade-in">
                         <div class="hover-underline-animation">
-                            <a style="text-decoration: none; color: black !important;"
-                               href="{{ action('PostController@view',
-                            $post['id']) }}">
-                                <h3 style="color: red; margin-top: -10%">{{ $post['created_at'] }} by: [username]</h3>
-                            </a>
+                            <h3 style="color: grey; font-size: 150%; margin-top: -10%">{{ $post['created_at'] }} by: [username]</h3>
                         </div>
+                    </div>
+                    <div class="fade-in-delay">
+                        <h3 style="word-break: break-word; color: whitesmoke">{{ $post['content'] }}</h3>
                     </div>
                 </div>
                 <br>
+            </div>
         </div>
-    </div>
     </div>
 
 @endsection
