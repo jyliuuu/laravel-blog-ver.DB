@@ -1,4 +1,7 @@
-*{scroll-behavior:smooth}
+*{
+    scroll-behavior:smooth;
+    cursor: none !important;
+}
 
 .fs-xs {
     min-height: 20px;
@@ -104,30 +107,25 @@
 }
 .header-active:hover {
     color: red;
-    cursor: none;
 }
 
 .hover-change {
     color: #232323;
     -webkit-transition: color 1s;
     transition: color 1s;
-    cursor: none;
 }
 .hover-change:hover {
     color: red;
-    cursor: none;
 }
 
 .hover-change-red {
     color: darkred;
     -webkit-transition: color 1s;
     transition: color 1s;
-    cursor: none;
 }
 
 .hover-change-red:hover {
     color: black;
-    cursor: none;
 }
 
 .styled-font {
@@ -138,14 +136,12 @@
 }
 
 .hover-underline-animation {
-    cursor: none;
     display: inline-block;
     position: relative;
     color: red;
 }
 
 .hover-underline-animation:after {
-    cursor: none;
     content: '';
     position: absolute;
     width: 100%;
@@ -160,7 +156,6 @@
 }
 
 .hover-underline-animation:hover:after {
-    cursor: none;
     transform: scaleX(1);
     transform-origin: bottom left;
 

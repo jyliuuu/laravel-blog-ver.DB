@@ -1,5 +1,10 @@
+let navLinks = document.querySelectorAll("x-nav-link.hover-this")
+// hover on nav bar item
+const link = document.querySelectorAll('nav > .hover-this')
+// cursor main class
 const cursorTag = document.querySelector("div.cursor")
 const balls = cursorTag.querySelectorAll("div")
+// cursor text appearing
 const ballMessage = cursorTag.querySelector("div span")
 const images = document.querySelectorAll("img[data-hover]")
 
@@ -11,7 +16,7 @@ balls.forEach((ball, index) => {
     let currentX = 0
     let currentY = 0
 
-    let speed = 0.15 - index * 0.01
+    let speed = 0.14 - index * 0.008
 
     const animate = function () {
         currentX += (aimX - currentX) * speed
@@ -26,10 +31,18 @@ balls.forEach((ball, index) => {
     animate()
 })
 
+
+
 // follow cursor
 document.addEventListener("mousemove", function (event) {
     aimX = event.pageX
     aimY = event.pageY
+})
+
+navLinks.forEach(link => {
+    link.addEventListener('mouseover', () => {
+        cursorTag.classList.add("link-grow")
+    })
 })
 
 // cursor reacts to image and adds text in this method

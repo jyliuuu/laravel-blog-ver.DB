@@ -14,16 +14,16 @@ $role = Auth::user()->role_id;
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
-                        {{ __('Home') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('user.posts')" :active="request()->routeIs('user.posts')">
-                        {{ __('Posts') }}
-                    </x-nav-link>
+            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <x-nav-link class="hover-this" :href="route('home')" :active="request()->routeIs('home')">
+                    {{ __('Home') }}
+                </x-nav-link>
+                <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    {{ __('Dashboard') }}
+                </x-nav-link>
+                <x-nav-link :href="route('user.posts')" :active="request()->routeIs('user.posts')">
+                    {{ __('Posts') }}
+                </x-nav-link>
                 @if($role == 1)
                     <x-nav-link :href="route('a.posts')" :active="request()->routeIs('a.posts')">
                         {{ __('Posts+') }}
@@ -32,10 +32,11 @@ $role = Auth::user()->role_id;
                         {{ __('Users+') }}
                     </x-nav-link>
                 @endif
-                    <x-nav-link :href="route('settings')" :active="request()->routeIs('settings')">
-                        {{ __('Settings') }}
-                    </x-nav-link>
-                </div>
+                <x-nav-link :href="route('settings')" :active="request()->routeIs('settings')">
+                    {{ __('Settings') }}
+                </x-nav-link>
+            </div>
+
             </div>
 
             <!-- Settings Dropdown -->

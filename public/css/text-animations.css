@@ -45,5 +45,25 @@
     }
 }
 
+.fade-in-opacity {
+    animation-name: Fade;
+    animation-duration: 1s;
+    transition-timing-function: linear;
+    animation-delay: .01s;
+    animation-fill-mode : backwards , none;
+    animation-iteration-count : 1 , infinite;
+}
+@keyframes Fade {
+    0% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 
 

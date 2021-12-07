@@ -68,6 +68,9 @@
                     </a>
                 </u>
             </h5>
+            @if (Auth::check())
+                <div class="fs-m"></div>
+            @else
             <section class="register" id="register">
                 <div class="fs-s"></div>
                 <a href="{{ route('register') }}" class="header-register hover-change"><u>Register.</u></a>
@@ -83,6 +86,7 @@
                 </h4>
                 <div class="fs-s"></div>
             </section>
+            @endif
         </div>
     </div>
 </div>

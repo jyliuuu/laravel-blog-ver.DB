@@ -12,10 +12,19 @@ div.cursor div {
     z-index: 10000;
     pointer-events: none;
     transform: translate(-50%, -50%);
+    transition: transform 0.3s ease;
+    mix-blend-mode: difference;
 }
 
-.morph:hover {
+div.cursor div span {
+    mix-blend-mode: normal;
+}
+
+.morph:hover ~ div.cursor div {
+    /*THIS SHOULD GO BIG AND GREY BUT IT IS NOT.  */
+    cursor: none;
     --primaryColor: grey;
+    transform: scale(6);
 }
 
 .no-cursor {
@@ -35,4 +44,15 @@ div.cursor div span {
     line-height: 20px;
 }
 
+.hover-this {
+    transition: all 0.3s ease;
+}
+/*.hover-this:hover ~ div.cursor {*/
+/*    transform: translate(-50%, -50%) scale(8);*/
+/*}*/
+
+.link-grow {
+    transform: scale(2);
+    background-color: grey;
+}
 
