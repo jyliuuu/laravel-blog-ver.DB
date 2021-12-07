@@ -38,11 +38,12 @@
         <div class="fs-l"></div>
         <div class="styled-font">
             <div class="fade-in-sped">
-                <section class="one" id="one">
+                <br>
+                <div class="one" id="one">
                 <h1 style="color: black; font-size: 400%; letter-spacing: -3px;">
                     One & only.
                 </h1>
-                </section>
+                </div>
             </div>
             <h4 style="color: black">
                 The one and only platform you'll ever need for your Laravel journey.

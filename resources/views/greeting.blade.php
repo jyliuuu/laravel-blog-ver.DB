@@ -41,18 +41,16 @@ $role = Auth::user()->role_id;
         <br>
         <div class="fs-s"></div>
         <div class="fs-m"></div>
-            <section class="new" id="new">
-                <div class="fade-in-delay-m">
-                    <div class="styled-font">
-                        <a href="{{ route('a.posts') }}" class="hover-this header-register hover-change-red"><u>$newPost</u></a>
-                        <div class="fs-xs"></div>
-                        <h4 style="color: black">
-                            Let the world hear your voice, or your problems with Laravel..
-                        </h4>
-                        <div class="fs-s"></div>
-                    </div>
+            <div class="fade-in-delay-m">
+                <div class="styled-font">
+                    <a href="{{ route('a.posts') }}" class="hover-this header-register hover-change-red"><u>$newPost</u></a>
+                    <div class="fs-xs"></div>
+                    <h4 style="color: black">
+                        Let the world hear your voice, or your problems with Laravel..
+                    </h4>
+                    <div class="fs-s"></div>
                 </div>
-            </section>
+            </div>
             <div class="styled-font">
                 <a href="{{ route('settings') }}" class="hover-this header-register hover-change-red"><u>config.php</u></a>
                 <div class="fs-xs"></div>

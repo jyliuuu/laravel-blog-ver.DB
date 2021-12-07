@@ -126,6 +126,15 @@
     color: black;
 }
 
+.header-center-xs {
+    text-align: left;
+    justify-content: center;
+    font-size: 300%;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -4px;
+    color: black;
+}
+
 .header-active {
     -webkit-transition: color .5s;
     transition: color .5s;

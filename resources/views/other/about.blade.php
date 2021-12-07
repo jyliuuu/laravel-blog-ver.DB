@@ -21,9 +21,9 @@
             <div class="row" style="padding: 85px">
                 <div class="col-sm">
                     <div class="fade-in-sped hover-this" style="margin-left: -2%">
-                        <a href="https://github.com/jyliuuu" style="text-decoration: black; color: black !important;">
+                        <a href="https://www.linkedin.com/in/liu-kcj/" style="text-decoration: black; color: black !important;">
                             <h2 class="header-about" style="margin-bottom: -3%">Jacky</h2>
-                            <h1 class="spectral-l hover-this "><u>Liu</u></h1>
+                            <h1 class="spectral-l hover-this ">KC <u>Liu</u></h1>
                         </a>
                         <p class="styled-font spectral-xs">
                             Clicking my real name name will redirect you to my Linkedin.<br>
@@ -65,20 +65,28 @@
         <div style="margin-left: 80px">
             <div class="row">
                 <div class="col-sm">
-                    <div class="fade-in-sped hover-this" style="margin-left: -2%">
+                    <div class="fade-in-sped" style="margin-left: -2%">
                         <a href="https://github.com/jyliuuu" style="text-decoration: black; color: black !important;">
                             <h2 class="header-about" style="margin-bottom: -3%">The</h2>
-                            <h1 class="spectral-l hover-this "><u>Education</u></h1>
+                            <h1 class="spectral-l"><u>Education</u></h1>
                         </a>
+                        <div style="min-height: 100px"></div>
+                        <h1 class="header-center-xs">Rijn IJssel</h1>
+                        <div style="min-height: 100px"></div>
+                        <h1 class="header-center-xs">Lyceum Elst</h1>
                     </div>
                 </div>
                 <div class="col-sm">
-                    <div class="fs-s"></div>
-                    <p>insert school name</p>
+                    <div style="min-height: 450px"></div>
+                    <h1 class="header-center-xs">Software Developer</h1>
+                    <div style="min-height: 100px"></div>
+                    <h1 class="header-center-xs">Zorg & Welzijn, Landbouw & Techniek, Economie</h1>
                 </div>
                 <div class="col-sm">
-                    <div class="fs-s"></div>
-                    <p>insert school pics</p>
+                    <div style="min-height: 450px"></div>
+                    <h1 class="header-center-xs">2020 - present</h1>
+                    <div style="min-height: 100px"></div>
+                    <h1 class="header-center-xs">2016 - 2020</h1>
                 </div>
             </div>
         </div>
