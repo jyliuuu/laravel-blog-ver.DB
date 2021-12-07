@@ -1,44 +1,48 @@
 <?php
 $role = Auth::user()->role_id;
 ?>
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+@if (Request::path() == 'about')
+    <nav x-data="{ open: false }" class="larabar-about">
+@else
+    <nav x-data="{ open: false }" class="larabar">
+@endif
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
+                <div class="flex-shrink-0 flex items-center" style="mix-blend-mode: difference">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
+                        <x-application-logo class="block h-10 w-auto fill-current text-white" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                <x-nav-link class="hover-this" :href="route('home')" :active="request()->routeIs('home')">
-                    {{ __('Home') }}
-                </x-nav-link>
-                <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                    {{ __('Dashboard') }}
-                </x-nav-link>
-                <x-nav-link :href="route('user.posts')" :active="request()->routeIs('user.posts')">
-                    {{ __('Posts') }}
-                </x-nav-link>
-                @if($role == 1)
-                    <x-nav-link :href="route('a.posts')" :active="request()->routeIs('a.posts')">
-                        {{ __('Posts+') }}
+                <div class="hover-this nav-links">
+                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                        {{ __('Home') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('admin.users')" :active="request()->routeIs('admin.users')">
-                        {{ __('Users+') }}
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                        {{ __('Dashboard') }}
                     </x-nav-link>
-                @endif
-                <x-nav-link :href="route('settings')" :active="request()->routeIs('settings')">
-                    {{ __('Settings') }}
-                </x-nav-link>
+                    <x-nav-link :href="route('user.posts')" :active="request()->routeIs('user.posts')">
+                        {{ __('Posts') }}
+                    </x-nav-link>
+                    @if($role == 1)
+                        <x-nav-link :href="route('a.posts')" :active="request()->routeIs('a.posts')">
+                            {{ __('Posts+') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('admin.users')" :active="request()->routeIs('admin.users')">
+                            {{ __('Users+') }}
+                        </x-nav-link>
+                    @endif
+                    <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
+                        {{ __('About') }}
+                    </x-nav-link>
+                </div>
             </div>
-
             </div>
-
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <x-dropdown align="right" width="48">
@@ -49,10 +53,18 @@ $role = Auth::user()->role_id;
                             <div>{{ Auth::user()->name }} | &ensp;</div>
                                 <div class="fs-xs"></div>
                             <form method="POST" action="{{ route('logout') }}">
+                            @if (Request::path() == 'about')
                                 @csrf
                                 <div class="styled-font">
-                                    <input class="btn-sm" type="submit"  value="Logout">
+                                    <input class="btn-sm btn-dark" type="submit"  value="Logout">
                                 </div>
+                            @else
+                                @csrf
+                                <div class="styled-font">
+                                    <input class="btn-sm btn-danger" type="submit"  value="Logout">
+                                </div>
+                            @endif
+
                             </form>
 
                         </button>

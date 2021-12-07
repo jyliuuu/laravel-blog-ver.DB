@@ -12,7 +12,7 @@
                     </div>
                     <div class="fade-in">
                         <div class="hover-underline-animation">
-                            <h3 style="color: grey; font-size: 150%; margin-top: -10%">{{ $post['created_at'] }} by: [username]</h3>
+                            <h3 class="hover-this" style="color: grey; font-size: 150%; margin-top: -10%">{{ $post['created_at'] }} by: [username]</h3>
                         </div>
                     </div>
                     <div class="fade-in-delay">
@@ -23,5 +23,10 @@
             </div>
         </div>
     </div>
-
+    <style>
+        .cursor {
+            border: 2px solid red;
+            border-radius: 50%;
+        }
+    </style>
 @endsection

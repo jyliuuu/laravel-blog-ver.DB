@@ -10,7 +10,7 @@
                         <a style="word-break: break-word; text-decoration: none; color: black !important;"
                            href="{{ action('ViewPostController@show',
                             $single_post['id']) }}">
-                            <h1 class="header-post hover-change">
+                            <h1 class="header-post hover-change hover-this">
                                 {{ $single_post['title'] }}
                             </h1>
                         </a>
@@ -20,7 +20,7 @@
                             <a style="text-decoration: none; color: black !important;"
                                href="{{ action('ViewPostController@show',
                             $single_post['id']) }}">
-                            <h3 style="color: red; margin-top: -10%">{{ $single_post['created_at'] }} by: [username]</h3>
+                            <h3 class="hover-this" style="color: red; margin-top: -10%">{{ $single_post['created_at'] }} by: [username]</h3>
                             </a>
                         </div>
                     </div>
@@ -30,5 +30,11 @@
             </div>
         </div>
     </div>
+    <style>
+        .cursor {
+            border: 2px solid red;
+            border-radius: 50%;
+        }
+    </style>
 
 @endsection

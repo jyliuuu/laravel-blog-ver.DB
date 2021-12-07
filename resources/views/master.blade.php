@@ -23,36 +23,23 @@
     <script src="js/jquery.scrollie.min.js"></script>
 
 <body class="antialiased">
+
+{{--fonts--}}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant&family=Spectral:wght@500&display=swap" rel="stylesheet">
 {{--@include('layouts.navigation')--}}
-<div class="no-cursor">
-    @if (Auth::check())
+@if (Auth::check())
         @include('layouts.navigation')
-    @else
+@else
         @include('layouts.guest-navigation')
-    @endif
+@endif
     @yield('content')
-</div>
-
 </body>
 </html>
-<div class="cursor">
-{{--first div defies text on cursor--}}
-    <div>
-        <span></span>
-    </div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-</div>
+<div class="cursor"></div>
 
 <script src="{{ URL::to('js/cursor.js') }}"></script>

@@ -3,6 +3,22 @@
     cursor: none !important;
 }
 
+.larabar {
+    background-color: black;
+}
+
+.larabar a {
+    color: red;
+}
+
+.larabar-about {
+    background-color: #D6C099;
+}
+
+.larabar-about a, div {
+    color: black;
+}
+
 .fs-xs {
     min-height: 20px;
 }
@@ -12,7 +28,7 @@
 }
 
 .fs-m {
-    min-height: 100px;
+    min-height: 120px;
 }
 
 .fs-l {
@@ -42,7 +58,16 @@
     font-size: 1500%;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: -15px;
-    line-height: 250px;
+    line-height: 220px;
+}
+
+.header-about {
+    text-align: left;
+    justify-content: center;
+    font-size: 1500%;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -15px;
+    line-height: 170px;
 }
 
 .header-post {
@@ -88,7 +113,7 @@
     justify-content: center;
     font-size: 600%;
     font-family: 'Montserrat', sans-serif;
-    letter-spacing: -6px;
+    letter-spacing: -8px;
     line-height: 100px;
 }
 
@@ -161,6 +186,18 @@
 
 }
 
+.nav-links {
+    margin-top: 2%;
+    justify-content: space-between;
+    display: flex;
+    list-style: none;
+}
+
+.nav-links a {
+    margin-left : 2.2em;
+    margin-right : 2.2em;
+}
+
 .text-center {
     text-align: center;
     justify-content: center;
@@ -184,8 +221,16 @@
 
 .main-red {
     background-image: linear-gradient(180deg,
-    whitesmoke 20%,
-    red 55%,
+    whitesmoke 35%,
+    red 35%,
+    red 100%
+    );
+}
+
+.main-dark {
+    background-image: linear-gradient(180deg,
+    black 35%,
+    red 35%,
     red 100%
     );
 }
@@ -195,33 +240,152 @@
     background: black;
 }
 
-.moving-gradient
+section.about p {
+    max-width: 35em;
+}
+
+.header-centered {
+    text-align: center;
+    justify-content: center;
+    font-size: 800%;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -6px;
+    line-height: 100px;
+}
+.header-centered-s {
+    margin-top: 20px;
+    text-align: center;
+    justify-content: center;
+    font-size: 300%;
+    font-family: 'Montserrat', serif;
+    letter-spacing: -3px;
+    top: -10px  ;
+}
+
+.header-about {
+    /*font-family: 'Cormorant', serif;*/
+    font-size: 1000%;
+    letter-spacing: -12px;
+}
+
+.header-about2 {
+    /*font-family: 'Cormorant', serif;*/
+    font-family: 'Montserrat', sans-serif;
+    text-align: right;
+    font-size: 1000%;
+    letter-spacing: -12px;
+}
+
+.centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.spectral-l {
+    /*font-family: 'Cormorant', serif;*/
+    font-family: 'Spectral', serif;
+    font-size: 1000%;
+    letter-spacing: -12px;
+    margin-top: -2%;
+}
+
+.spectral-s {
+    /*font-family: 'Cormorant', serif;*/
+    font-family: 'Spectral', serif;
+    font-size: 220%;
+    letter-spacing: -3px;
+    margin-top: -2%;
+}
+
+.spectral-xs {
+    /*font-family: 'Cormorant', serif;*/
+    font-family: 'Spectral', serif;
+    font-size: 140%;
+    letter-spacing: -2px;
+    margin-top: -2%;
+}
+
+.beige {
+    background-color: #D6C099;
+    min-height: 1080px;
+}
+
+.black {
+    background-color: black;
+    min-height: 1080px;
+}
+
+.red {
+    background-color: red;
+    min-height: 1080px;
+}
+
+.white {
+    background-color: white;
+    min-height: 1080px;
+}
+
+.blue {
+    background-color: #1F2B8F;
+    min-height: 1080px;
+}
+
+.staticimage
 {
-    font-size:30px;
-    background: linear-gradient(180deg, grey, #ffffff, red);
-    background-size: 200% 200%;
-
-    -webkit-animation: Animation 8s ease infinite;
-    -moz-animation: Animation 8s ease infinite;
-    animation: Animation 8s ease infinite;
+    position:relative;
+    left:0px;
+    top:0px;
+    transition:1s;
 }
 
-@-webkit-keyframes Animation {
-    0%{background-position:10% 0%}
-    50%{background-position:91% 100%}
-    100%{background-position:10% 0%}
-}
-@-moz-keyframes Animation {
-    0%{background-position:10% 0%}
-    50%{background-position:91% 100%}
-    100%{background-position:10% 0%}
-}
-@keyframes Animation {
-    0%{background-position:10% 0%}
-    50%{background-position:91% 100%}
-    100%{background-position:10% 0%}
+.hoverimage
+{
+    position:relative;
+    left:0px;
+    top:0px;
+    display:none;
+    transition:1s;
 }
 
+.imageContainer:hover .staticimage {
+    animation-name: Fade;
+    display:none;
+    transition:1s;
+    animation-duration: 1s;
+    transition-timing-function: linear;
+    animation-delay: .01s;
+    animation-fill-mode : backwards , none;
+    animation-iteration-count : 1 , infinite;
+}
 
+.imageContainer:hover .hoverimage {
+    animation-name: Fade;
+    display:inline-block;
+    transition:1s;
+    animation-duration: 1s;
+    transition-timing-function: linear;
+    animation-delay: .01s;
+    animation-fill-mode : backwards , none;
+    animation-iteration-count : 1 , infinite;
+}
 
+@keyframes Fade {
+    0% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
+section {
+    padding: 40px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}

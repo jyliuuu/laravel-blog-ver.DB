@@ -1,56 +1,33 @@
-let navLinks = document.querySelectorAll("x-nav-link.hover-this")
-// hover on nav bar item
-const link = document.querySelectorAll('nav > .hover-this')
-// cursor main class
-const cursorTag = document.querySelector("div.cursor")
-const balls = cursorTag.querySelectorAll("div")
-// cursor text appearing
-const ballMessage = cursorTag.querySelector("div span")
-const images = document.querySelectorAll("img[data-hover]")
+let mouseCursor = document.querySelector(".cursor")
+let navLinks = document.querySelectorAll('.hover-this a')
+let redirects = document.querySelectorAll('.hover-this')
 
-let aimX = 0
-let aimY = 0
+window.addEventListener('mousemove', cursor)
 
-// speed calculation
-balls.forEach((ball, index) => {
-    let currentX = 0
-    let currentY = 0
-
-    let speed = 0.14 - index * 0.008
-
-    const animate = function () {
-        currentX += (aimX - currentX) * speed
-        currentY += (aimY - currentY) * speed
-
-        ball.style.left = currentX + "px"
-        ball.style.top = currentY + "px"
-
-        requestAnimationFrame(animate)
-    }
-
-    animate()
-})
-
-
-
-// follow cursor
-document.addEventListener("mousemove", function (event) {
-    aimX = event.pageX
-    aimY = event.pageY
-})
+function cursor(e){
+    mouseCursor.style.top= e.pageY + 'px'
+    mouseCursor.style.left = e.pageX + 'px'
+}
 
 navLinks.forEach(link => {
+    link.addEventListener('mouseleave', () => {
+        mouseCursor.classList.remove('link-grow')
+    })
+
     link.addEventListener('mouseover', () => {
-        cursorTag.classList.add("link-grow")
+        mouseCursor.classList.add('link-grow')
     })
 })
 
-// cursor reacts to image and adds text in this method
-images.forEach(image => {
-        image.addEventListener("mouseover", function() {
-        ballMessage.innerHTML = image.getAttribute('data-hover')
+redirects.forEach(text => {
+    text.addEventListener('mouseleave', () => {
+        mouseCursor.classList.remove('link-grow')
     })
-        image.addEventListener("mouseout", function() {
-        ballMessage.innerHTML = " "
+
+    text.addEventListener('mouseover', () => {
+        mouseCursor.classList.add('link-grow')
     })
 })
+
+
+

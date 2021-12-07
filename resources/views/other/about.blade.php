@@ -1,92 +1,126 @@
 @extends('master')
 
 @section('content')
-    <div class="main">
+    <div class="beige">
         <div class="container">
             <div class="fs-m"></div>
-            <div data-background="#63ABFF">
-                <div class="fade-in-sped">
-                    <h2 class="header-l">About page</h2>
-                </div>
-                <div class="fade-in">
-                    <h1 class="header-center" style="color: black; margin-top: -12px">
-                        Hi, I'm <p header-center class="hover-underline-animation">Jacky KC Liu</p></h1>
-                    <h2 class="header-center-s">Born and raised in <span style="color: red">
-                            the Netherlands</span><br>
-                    and having graduated from a 'MAVO school course',
-                    which had nothing to do with designing or coding whatsoever.</h2>
-                    <br>
-                </div>
-                <div class="fade-in-delay">
-                    <h2 class="header-center-s"><span style="color: red">Jacky</span>
-                        had then decided to set his foot on new soil, taking a
-                        'software developer' school course.
-                    </h2>
-                </div>
-                <br>
-                <div class="fade-in-delay">
-                    <h1 class="header-center" style="margin-top: -25px">
-                        <img src="{{ URL::to('image/rijnijssel2.jpg') }}" alt="rijn ijssel"
-                             data-hover="Rijn IJssel <br>ENKA Campus">
-                    </h1>
-                </div>
-                <br>
-                <div class="fade-in-delay-m">
-                    <h1 class="header-center" style="margin-top: -25px; font-size: 450%">
-                        <a href="#one" style="text-decoration: none; color: black !important;"
-                           class="hover-underline-animation">
-                            Let's go!
+            <div class="fade-in-sped" style="margin-left: -2%">
+                <h2 class=" header-about" style="margin-bottom: -3%">Embrace</h2>
+                <h1 class=" spectral-l">Creativity.</h1>
+            </div>
+            <div class="fs-s"></div>
+            <p class="spectral-s">Embracing creativity is key to creating amazing experiences<br> for your client
+                and users across the globe, both visually and internally.</p>
+            <br>
+            <p class="spectral-xs">Fusce eleifend ligula sed dignissim ultrices. Nam sed suscipit quam. Vestibulum eros massa, lobortis a posuere vitae, hendrerit ut velit. Curabitur vitae mi non libero congue pellentesque. Cras ullamcorper arcu vel purus sollicitudin convallis. Vivamus ac neque vitae diam pellentesque mollis. Praesent eu volutpat erat. Maecenas auctor tempus velit et sodales.</p>
+        </div>
+    </div>
+
+<section class="me">
+    <div class="white">
+            <div class="row" style="padding: 85px">
+                <div class="col-sm">
+                    <div class="fade-in-sped hover-this" style="margin-left: -2%">
+                        <a href="https://github.com/jyliuuu" style="text-decoration: black; color: black !important;">
+                            <h2 class="header-about" style="margin-bottom: -3%">Jacky</h2>
+                            <h1 class="spectral-l hover-this "><u>Liu</u></h1>
                         </a>
-                    </h1>
+                        <p class="styled-font spectral-xs">
+                            Clicking my real name name will redirect you to my Linkedin.<br>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="fs-s"></div>
+                        <div class="imageContainer hover-this" style="text-align: center; justify-content: center;">
+                        <img src="{{ URL::to('image/solid2.png') }}" class="centered staticimage" style="min-width: 420px; max-height: 450px">
+                        <img src="{{ URL::to('image/me.png') }}" class="centered hoverimage" style="min-width: 420px; max-height: 450px">
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="fade-in-sped hover-this" style="text-align: right">
+                        <a href="https://github.com/jyliuuu" style="text-decoration: black; color: black !important;">
+                            <h2 class="header-about2" style="margin-bottom: -3%">aka:</h2>
+                            <h1 class="spectral-l hover-this ">jy.liu</h1>
+                        </a>
+                        <p class="styled-font spectral-xs" style="text-align: right">
+                            Clicking my alias will redirect you to my GitHub.<br>
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="fs-l"></div>
-            <div class="styled-font">
-                <div class="fade-in-sped">
-                    <section class="one" id="one">
-                        <h1 class="text-white" style="font-size: 400%; letter-spacing: -3px;">
-                            One & only.
-                        </h1>
-                    </section>
-                </div>
-                <h4 style="color: white">
-                    The one and only platform you'll ever need for your Laravel journey.
-                    <br>
-                    <span style="color: red">LaraBlog</span> offers you to be able to connect with millions of others, doing the same thing:
-                </h4>
-                <h1 class="header-laravel hover-change">Studying Laravel.</h1>
-                <div class="fs-xs"></div>
-                <h1 class="header-l" style="font-family: 'Distancia Regular'; color: white">"</h1>
-                <h4 class="text-center" style="color: white">
-                    Is it worth learning Laravel? <span style="color: red">Yes, it is for sure.</span><br>
-                    Laravel is widely used in today's companies because <br>it is able to drastically reduce development times,
-                    and this need never gets old. <br>So if you want to advance your career as a PHP developer you better learn Laravel!
-                </h4>
-                <h1 class="header-r" style="font-family: 'Distancia Regular'; color: white">"</h1>
-                <h5 class="text-center">
-                    <u>
-                        <a href="https://www.polynique.com/web-development/what-is-laravel-and-why-you-should-learn-it/"
-                           style="color: red !important;">
-                            Source: www.polynique.com
+        </div>
+        <div class="container">
+            <div class="fs-s"></div>
+                <p class="spectral-s">Embracing creativity is key to creating amazing experiences<br> for your client
+                    and users across the globe, both visually and internally.</p>
+                <br>
+                <p class="spectral-xs">Fusce eleifend ligula sed dignissim ultrices. Nam sed suscipit quam. Vestibulum eros massa, lobortis a posuere vitae, hendrerit ut velit. Curabitur vitae mi non libero congue pellentesque. Cras ullamcorper arcu vel purus sollicitudin convallis. Vivamus ac neque vitae diam pellentesque mollis. Praesent eu volutpat erat. Maecenas auctor tempus velit et sodales.</p>
+            </div>
+        </div>
+</section>
+
+<section class="education">
+    <div class="blue">
+        <div style="margin-left: 80px">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="fade-in-sped hover-this" style="margin-left: -2%">
+                        <a href="https://github.com/jyliuuu" style="text-decoration: black; color: black !important;">
+                            <h2 class="header-about" style="margin-bottom: -3%">The</h2>
+                            <h1 class="spectral-l hover-this "><u>Education</u></h1>
                         </a>
-                    </u>
-                </h5>
-                <section class="register" id="register">
+                    </div>
+                </div>
+                <div class="col-sm">
                     <div class="fs-s"></div>
-                    <a href="{{ route('register') }}" class="header-register hover-change"><u>Register.</u></a>
-                    <div class="fs-xs"></div>
-                    <h4 style="color: red">
-                        Wait no more, and start your Laravel profession today.
-                    </h4>
+                    <p>insert school name</p>
+                </div>
+                <div class="col-sm">
                     <div class="fs-s"></div>
-                    <a href="{{ route('login') }}" class="header-register hover-change"><u>Login.</u></a>
-                    <div class="fs-xs"></div>
-                    <h4 style="color: red">
-                        Already have an account? Wait no more, and chat away.
-                    </h4>
-                    <div class="fs-s"></div>
-                </section>
+                    <p>insert school pics</p>
+                </div>
             </div>
         </div>
     </div>
+    <div class="container">
+        <div class="fs-s"></div>
+        <p class="spectral-s">Embracing creativity is key to creating amazing experiences<br> for your client
+            and users across the globe, both visually and internally.</p>
+        <br>
+        <p class="spectral-xs">Fusce eleifend ligula sed dignissim ultrices. Nam sed suscipit quam. Vestibulum eros massa, lobortis a posuere vitae, hendrerit ut velit. Curabitur vitae mi non libero congue pellentesque. Cras ullamcorper arcu vel purus sollicitudin convallis. Vivamus ac neque vitae diam pellentesque mollis. Praesent eu volutpat erat. Maecenas auctor tempus velit et sodales.</p>
+    </div>
+    </div>
+</section>
+
+<section class="socials">
+    <div class="white">
+        <div style="margin-left: 80px">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="fade-in-sped hover-this" style="margin-left: -2%">
+                        <a href="https://github.com/jyliuuu" style="text-decoration: black; color: black !important;">
+                            <h2 class="header-about" style="margin-bottom: -3%">My</h2>
+                            <h1 class="spectral-l hover-this "><u>Socials</u></h1>
+                        </a>
+                        <p style="margin-bottom: -10%" class="styled-font text-muted spectral-xs">
+                            Clicking my name will redirect you to my GitHub.<br>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm">
+
+                </div>
+            </div>
+        </div>
+        <div class="fs-m"></div>
+        <div class="container">
+            <p class="spectral-s">Embracing creativity is key to creating amazing experiences<br> for your client
+                and users across the globe, both visually and internally.</p>
+
+            <p>Fusce eleifend ligula sed dignissim ultrices. Nam sed suscipit quam. Vestibulum eros massa, lobortis a posuere vitae, hendrerit ut velit. Curabitur vitae mi non libero congue pellentesque. Cras ullamcorper arcu vel purus sollicitudin convallis. Vivamus ac neque vitae diam pellentesque mollis. Praesent eu volutpat erat. Maecenas auctor tempus velit et sodales.</p>
+        </div>
+    </div>
+</section>
+
 @endsection
