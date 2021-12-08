@@ -173,6 +173,7 @@
     display: inline-block;
     position: relative;
     color: red;
+    line-height:40px;
 }
 
 .hover-underline-animation:after {
@@ -341,60 +342,43 @@ section.about p {
     min-height: 1080px;
 }
 
-.staticimage
-{
-    position:relative;
-    left:0px;
-    top:0px;
-    transition:1s;
-}
-
-.hoverimage
-{
-    position:relative;
-    left:0px;
-    top:0px;
-    display:none;
-    transition:1s;
-}
-
-.imageContainer:hover .staticimage {
-    animation-name: Fade;
-    display:none;
-    transition:1s;
-    animation-duration: 1s;
-    transition-timing-function: linear;
-    animation-delay: .01s;
-    animation-fill-mode : backwards , none;
-    animation-iteration-count : 1 , infinite;
-}
-
-.imageContainer:hover .hoverimage {
-    animation-name: Fade;
-    display:inline-block;
-    transition:1s;
-    animation-duration: 1s;
-    transition-timing-function: linear;
-    animation-delay: .01s;
-    animation-fill-mode : backwards , none;
-    animation-iteration-count : 1 , infinite;
-}
-
-@keyframes Fade {
-    0% {
-        opacity: 0;
-    }
-    60% {
-        opacity: 0.5;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
 section {
     padding: 40px;
     position: sticky;
     position: -webkit-sticky;
     top: 0;
+}
+
+.card {
+    background: url("../image/me.png") no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    max-width: 600px;
+    margin: auto;
+    padding: 10px;
+    position: absolute;
+    color: #fff;
+    transition: transform 0.1s ease;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+.card:hover .content {
+    transform: translateZ(12px);
+}
+.card::before {
+    content: "";
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.content {
+    color: whitesmoke;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
 }

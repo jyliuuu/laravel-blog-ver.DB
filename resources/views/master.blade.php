@@ -24,6 +24,11 @@
 
 <body class="antialiased">
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<script src="https://kit.fontawesome.com/659125de6b.js" crossorigin="anonymous"></script>
+
 {{--fonts--}}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,5 +46,9 @@
 </body>
 </html>
 <div class="cursor"></div>
+<script>
+    AOS.init();
+</script>
 
 <script src="{{ URL::to('js/cursor.js') }}"></script>
+<script src="{{ URL::to('js/card.js') }}"></script>

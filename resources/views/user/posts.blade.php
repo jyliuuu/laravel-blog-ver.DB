@@ -15,6 +15,7 @@
                             </h1>
                         </a>
                     </div>
+                    <div class="fs-s"></div>
                     <div class="fade-in">
                         <div class="hover-underline-animation">
                             <a style="text-decoration: none; color: black !important;"
@@ -22,6 +23,7 @@
                             $single_post['id']) }}">
                             <h3 class="hover-this" style="color: red; margin-top: -10%">{{ $single_post['created_at'] }} by: [username]</h3>
                             </a>
+                            <i class="far fa-heart" style="font-size: 150%"></i>
                         </div>
                     </div>
                 </div>

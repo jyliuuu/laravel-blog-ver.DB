@@ -4,7 +4,7 @@
     <div class="beige">
         <div class="container">
             <div class="fs-m"></div>
-            <div class="fade-in-sped" style="margin-left: -2%">
+            <div data-aos="fade-up" style="margin-left: -2%">
                 <h2 class=" header-about" style="margin-bottom: -3%">Embrace</h2>
                 <h1 class=" spectral-l">Creativity.</h1>
             </div>
@@ -20,7 +20,7 @@
     <div class="white">
             <div class="row" style="padding: 85px">
                 <div class="col-sm">
-                    <div class="fade-in-sped hover-this" style="margin-left: -2%">
+                    <div data-aos="fade-up" class="hover-this" style="margin-left: -2%">
                         <a href="https://www.linkedin.com/in/liu-kcj/" style="text-decoration: black; color: black !important;">
                             <h2 class="header-about" style="margin-bottom: -3%">Jacky</h2>
                             <h1 class="spectral-l hover-this ">KC <u>Liu</u></h1>
@@ -32,13 +32,21 @@
                 </div>
                 <div class="col-sm">
                     <div class="fs-s"></div>
-                        <div class="imageContainer hover-this" style="text-align: center; justify-content: center;">
-                        <img src="{{ URL::to('image/solid2.png') }}" class="centered staticimage" style="min-width: 420px; max-height: 450px">
-                        <img src="{{ URL::to('image/me.png') }}" class="centered hoverimage" style="min-width: 420px; max-height: 450px">
-                    </div>
+                    <article class="card hover-this">
+                        <div class="content">
+                            <h2></h2>
+                        </div>
+{{--                        <img src="{{ URL::to('image/me.png') }}"--}}
+{{--                             data-aos="fade-up-right"--}}
+{{--                             data-aos-duration="1300"--}}
+{{--                             class="centered hoverimage" style="min-width: 420px; max-height: 450px">--}}
+                    </article>
+
                 </div>
                 <div class="col-sm">
-                    <div class="fade-in-sped hover-this" style="text-align: right">
+                    <div data-aos="fade-up"
+                         data-aos-duration="700"
+                        class="hover-this" style="text-align: right">
                         <a href="https://github.com/jyliuuu" style="text-decoration: black; color: black !important;">
                             <h2 class="header-about2" style="margin-bottom: -3%">aka:</h2>
                             <h1 class="spectral-l hover-this ">jy.liu</h1>
@@ -106,12 +114,12 @@
         <div style="margin-left: 80px">
             <div class="row">
                 <div class="col-sm">
-                    <div class="fade-in-sped hover-this" style="margin-left: -2%">
-                        <a href="https://github.com/jyliuuu" style="text-decoration: black; color: black !important;">
+                    <div class="fade-in-sped" style="margin-left: -2%">
+                        <a href="#" style="text-decoration: black; color: black !important;">
                             <h2 class="header-about" style="margin-bottom: -3%">My</h2>
-                            <h1 class="spectral-l hover-this "><u>Socials</u></h1>
+                            <h1 class="spectral-l "><u>Socials</u></h1>
                         </a>
-                        <p style="margin-bottom: -10%" class="styled-font text-muted spectral-xs">
+                        <p style="margin-bottom: -10%" class="spectral-xs">
                             Clicking my name will redirect you to my GitHub.<br>
                         </p>
                     </div>
