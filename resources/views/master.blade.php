@@ -50,5 +50,6 @@
     AOS.init();
 </script>
 
+<script src="{{ URL::to('js/session_like.js') }}"></script>
 <script src="{{ URL::to('js/cursor.js') }}"></script>
 <script src="{{ URL::to('js/card.js') }}"></script>

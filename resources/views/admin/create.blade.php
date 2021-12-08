@@ -34,7 +34,7 @@
                             <input type="text" class="form-control" id="content" name="content" placeholder="Enter your content here.">
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary hover-this">Submit</button>
                     </form>
                 </div>
             </div>

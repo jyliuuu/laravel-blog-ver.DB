@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Likes;
+use Illuminate\Support\Facades\DB;
 
 class ViewPostController extends Controller
 {
@@ -14,9 +17,18 @@ class ViewPostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        // here was my failed solution from 7/12
+//        $posts = Post::all();
+//        $likes = Likes::all();
+        // here is the new method from 8/12
+        $postsfull = DB::table('posts')
+            ->join('likes', 'posts.id', '=', 'likes.post_id')
+            ->select('posts.*', 'title', 'posts.id', 'likes')
+            ->get();
+
         return view('user.posts',
-            compact('posts'));
+            compact('postsfull'));
+
     }
 
     /**
@@ -48,8 +60,15 @@ class ViewPostController extends Controller
      */
     public function show($id)
     {
-        $post = Post::find($id);
-        return view('user.view-post', compact('post', 'id'));
+        $postfull = DB::table('posts')
+            ->join('likes', 'posts.id', '=', 'likes.post_id')
+            ->select('posts.*', 'title', 'content', 'posts.id', 'likes')
+            ->where('posts.id', $id)
+            ->get();
+//            ->first();
+        return view('user.view-post',
+            compact('postfull', 'id'));
+
     }
 
     /**
@@ -84,5 +103,20 @@ class ViewPostController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function search(Request $request)
+    {
+        // Get the search value from the request
+        $search = $request->input('title');
+
+        // Search in the title and body columns from the posts table
+        $posts = Post::query()
+            ->join('likes', 'posts.id', '=', 'likes.post_id')
+            ->select('posts.*', 'title', 'posts.id', 'likes')
+            ->where('title', 'LIKE', "%{$search}%")
+            ->get();
+        // Return the search view with the results compacted
+        return view('user.search', compact('posts'));
     }
 }

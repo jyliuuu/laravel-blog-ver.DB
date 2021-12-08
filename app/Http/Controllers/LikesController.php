@@ -2,11 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Likes;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class UserController extends Controller
+class LikesController extends Controller
 {
+    public function join()
+    {
+        $postsfull = DB::table('posts')
+            ->join('likes', 'posts.id', '=', 'likes.post_id')
+            ->select('posts.*', 'title', 'posts.id', 'likes')
+            ->get();
+        return $postsfull;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,9 +23,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return view('admin.users',
-            compact('users'));
+        //
     }
 
     /**
@@ -26,7 +33,7 @@ class UserController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -59,8 +66,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $users = User::find($id);
-        return view('admin.u-edit', compact('users', 'id'));
+        //
     }
 
     /**
@@ -72,20 +78,15 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'mail' => 'required',
-        ]);
-
-
-        $user = User::find($id);
-        $user->name = $request->get('name');
-        $user->email = $request->get('mail');
-        $user->role_id = $request->get('role');
-        $user->save();
-
-        return redirect()->route('admin.users')
-            ->with('success', 'User has successfully been updated.');
+        DB::table('likes')
+            ->where('post_id', $id)
+            ->increment('likes', 1);
+//        $post->save();
+//        return view('greeting');
+        return redirect()->
+        action('ViewPostController@show',
+            $id)
+            ->with('success', 'Post has successfully been updated.');
     }
 
     /**
@@ -96,9 +97,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::find($id);
-        $user->delete();
-        return redirect()->route('admin.users')->with('success', 'User Deleted.');
+        //
     }
-
 }

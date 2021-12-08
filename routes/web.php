@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\LikesController;
 
 
 /*
@@ -58,6 +59,12 @@ Route::get('/posts', [ViewPostController::class, 'index'])
     ->name('user.posts');
 Route::resource('post', 'ViewPostController');
 
+Route::get('/view-post', function () {
+    return view('user.view-post');
+})
+    ->name('view-post');
+Route::resource('view-post', 'LikesController');
+
 // laravel splash screen
 Route::get('/', function () {
     return view('home');
@@ -76,5 +83,9 @@ Route::get('/about', function () {
 Route::get('/dashboard', function () {
     return view('greeting');
 })->middleware(['auth'])->name('dashboard');
+
+//search function
+Route::post('/search', 'ViewPostController@search')
+    ->name('search');
 
 require __DIR__.'/auth.php';

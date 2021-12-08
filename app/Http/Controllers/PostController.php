@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Likes;
 use Illuminate\Http\Response;
 
 class PostController extends Controller
@@ -40,6 +42,9 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        $user_id = Auth::id();
+        $default_likes = 0;
+
         $this->validate($request, [
             'title' => 'required',
             'content' => 'required'
@@ -49,10 +54,18 @@ class PostController extends Controller
             'content' => $request->get('content')
         ]);
         $post->save();
+        $post->id;
+
+        $like = new Likes([
+            'post_id' => $post->id,
+            'user_id' => $user_id,
+            'likes' => $default_likes
+        ]);
+        $like->save();
+
         return redirect()
             ->route('admin.create')
             ->with('success', 'Data added!');
-
     }
 
     /**
@@ -113,5 +126,10 @@ class PostController extends Controller
         $post->delete();
         return redirect()->route('a.posts')
         ->with('success', 'Post Deleted.');
+    }
+
+    public function posts()
+    {
+        return $this->hasMany('App\Post');
     }
 }

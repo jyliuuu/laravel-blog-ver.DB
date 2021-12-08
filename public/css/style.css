@@ -173,7 +173,11 @@
     display: inline-block;
     position: relative;
     color: red;
-    line-height:40px;
+    line-height:100px;
+}
+
+.form-control {
+    max-width: 90%;
 }
 
 .hover-underline-animation:after {
