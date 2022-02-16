@@ -18,17 +18,18 @@ class ViewPostController extends Controller
     public function index()
     {
         // here was my failed solution from 7/12
-//        $posts = Post::all();
-//        $likes = Likes::all();
+        //        $posts = Post::all();
+        //        $likes = Likes::all();
         // here is the new method from 8/12
         $postsfull = DB::table('posts')
             ->join('likes', 'posts.id', '=', 'likes.post_id')
             ->select('posts.*', 'title', 'posts.id', 'likes')
-            ->get();
+            ->paginate(5);
 
-        return view('user.posts',
-            compact('postsfull'));
-
+        return view(
+            'user.posts',
+            compact('postsfull')
+        );
     }
 
     /**
@@ -65,10 +66,11 @@ class ViewPostController extends Controller
             ->select('posts.*', 'title', 'content', 'posts.id', 'likes')
             ->where('posts.id', $id)
             ->get();
-//            ->first();
-        return view('user.view-post',
-            compact('postfull', 'id'));
-
+        //            ->first();
+        return view(
+            'user.view-post',
+            compact('postfull', 'id')
+        );
     }
 
     /**
